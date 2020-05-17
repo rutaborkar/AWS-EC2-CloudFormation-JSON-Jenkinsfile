@@ -26,7 +26,7 @@
         "AvailabilityZone": "us-east-2c",        
         "ImageId": "ami-0f7919c33c90f5b58",
         "InstanceType": "t2.micro",
-        "KeyName": "Jenkins-11April2020"        
+        "KeyName": "devops-ruta"        
       }
     }
 
