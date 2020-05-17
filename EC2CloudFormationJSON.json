@@ -4,20 +4,21 @@
 
 
     "InstanceSecurityGroup" : {
-   "Type" : "AWS::EC2::SecurityGroup",
-   "Properties" : {
+     "Type" : "AWS::EC2::SecurityGroup",
+     "Properties" : {
       "GroupName": "sgCloudFormation",
-      "GroupDescription" : "Allow all traffic to client host",
-      "VpcId" : {"Ref" : "vpc-0634df212d3fa0926"},
+        "GroupDescription" : "Allow all traffic to client host",
+        "VpcId" : {"Ref" : "vpc-0634df212d3fa0926"},
       "SecurityGroupIngress" : [{
          "IpProtocol" : "tcp",
          "FromPort" : 0,
          "ToPort" : 65535,
-         "CidrIp" : "0.0.0.0/0"
+         "CidrIp" : "0.0.0.0/0",
          "Description": "For traffic from Internet"
-      }],
+      }
+    ]
    }
- }
+ },
 
 
 "MyCloudFormationEC2Instance": {
@@ -32,7 +33,3 @@
 
   }
 }
-
-
-
-
