@@ -1,0 +1,38 @@
+{
+ "Description": "Create an EC2 instance by AWS CloudFormation",
+  "Resources": {
+
+
+    "InstanceSecurityGroup" : {
+   "Type" : "AWS::EC2::SecurityGroup",
+   "Properties" : {
+      "GroupName": "sgCloudFormation",
+      "GroupDescription" : "Allow all traffic to client host",
+      "VpcId" : {"Ref" : "vpc-0634df212d3fa0926"},
+      "SecurityGroupIngress" : [{
+         "IpProtocol" : "tcp",
+         "FromPort" : 0,
+         "ToPort" : 65535,
+         "CidrIp" : "0.0.0.0/0"
+         "Description": "For traffic from Internet"
+      }],
+   }
+ }
+
+
+"MyCloudFormationEC2Instance": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "AvailabilityZone": "us-east-2c",        
+        "ImageId": "ami-0f7919c33c90f5b58",
+        "InstanceType": "t2.micro",
+        "KeyName": "Jenkins-11April2020"        
+      }
+    }
+
+  }
+},
+
+
+
+
