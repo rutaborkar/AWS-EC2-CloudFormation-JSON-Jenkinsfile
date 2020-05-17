@@ -1,14 +1,20 @@
-pipeline{
+pipeline
+{
     agent any
 
-    stages{
+    stages
+    {
 
-        stage('Create EC2 instance throygh cloudformation and Jenkins'){
-
+        stage('Create EC2 instance throygh cloudformation and Jenkins')
+        {
+        steps{
+        
+            withAWS(credentials: 'AWSAccess', region: 'us-east-2'){
             sh 'aws cloudformation create-stack --stack-name CloudFormationEC2Instance --template-body file://EC2CloudFormationJSON.json'
         }
+        }
     }
-
+}
 
 }
 
