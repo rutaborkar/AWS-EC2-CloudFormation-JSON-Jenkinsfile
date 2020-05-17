@@ -8,7 +8,7 @@
      "Properties" : {
       "GroupName": "sgCloudFormation",
         "GroupDescription" : "Allow all traffic to client host",
-        "VpcId" : {"Ref" : "vpc-0634df212d3fa0926"},
+        "VpcId" : "vpc-0634df212d3fa0926",
       "SecurityGroupIngress" : [{
          "IpProtocol" : "tcp",
          "FromPort" : 0,
